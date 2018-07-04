@@ -33,4 +33,47 @@
 * Explore the data with more features - bedrooms, bathrooms, sqft_living, sqft_lot, floors, zipcode; target - price;
 * Evaluate the many_features model with test-data;
 * Predict the price of the house;
+-------------------------------------------------------------------------
+## 2. Analyzing the sentiment of product reviews (Classification model)
+-------------------------------------------------------------------------
+* Process - Intelligent System : All reviews -> Break into sentences -> (sentiment classifier)look for particular words -> Output(+/-);
+* Simple threshold classifier : Sentence from review(input x) -> feed with list of positive and negative word -> count the positive and negative words; If more + words -> positive review else a negative review;
+* Linear classifier : It takes all the words and adds weights to them. Sentence from x review-> feed with list of words and weights and the score is computed; score = weight of word1 * occurence of word1 + weight of word2 * occurence of word2 + ...;
+* Decision Boundary : A line of segregation between positive and negative reviews, decision boundary is 0;
+* Classification Error = fraction of mistakes = # mistakes / total # of sentences = 1 - accuracy;
+* Accuracy = fraction of correct predictions = # correct / total # of sentences = 1 - error;
+* Confusion Matrix - The relation between true label and predicted label; (True Positive, False Negative, False Positive, True Negative);
+
+#### Algorithm
+------------------------------------
+* Read the product review data. (name, review, rating)
+* Create a word count vector for each review - tokenizing/separating the words. (name, review, rating, word_count)
+* Extract the most popular product and explore it.
+* Build a sentiment classifier. rating (4,5) -> positive; rating(1,2) -> negative; rating(3) -> removed (data engineering); (name, review, rating, word_count, sentiment)
+  * Spliting the data - 80%/20% - training / test set;
+  * target="sentiment"; feature="word_count"; algorithm="logistic_classifier", input=training_data, validation=test_data;
+* Evaluate the sentiment classifier model w.r.t test data, metric = roc(confusion matrix);
+* Predict the sentiment of the most popular product using the trained model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
