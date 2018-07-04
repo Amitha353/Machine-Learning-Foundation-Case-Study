@@ -55,6 +55,38 @@
 * Evaluate the sentiment classifier model w.r.t test data, metric = roc(confusion matrix);
 * Predict the sentiment of the most popular product using the trained model.
 
+-------------------------------
+## 3. Retrieving Wikipedia articles (Clustering & Retrieval)
+-------------------------------
+* Similarity document retrieval : Most popular : "Bag of words" model.
+* Bag of Words : Order of words is ignored, count the number of instances of words and create a vector. The word count vectors are taken from the various documents. The summation of element-wise multiplication is high for similar documents.
+* TF-IDF - Term frequency inverse document frequency - it is the trade off between the local frequency and global rarity.
+* TF - look locally - count the number of words within the document (word count vector);
+* IDF - downweight the vector. All documents in the corpus a looked through - compute - log(#doc / (1 + #doc using the focus words))
+* It's low for frequently occuring word and high for rarely occuring words.
+
+#### Algorithms:
+-------------------
+###### Nearest neighbour model: Have a query article and a corpus to search articles from.
+* Need to specify deistance metrics; Output -> collection of related articles.
+###### 1-Nearest neighbour model : Input - Query articles; Output - Similar articles; 
+    Search over the corpus  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
