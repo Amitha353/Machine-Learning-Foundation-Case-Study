@@ -56,7 +56,7 @@
 * Predict the sentiment of the most popular product using the trained model.
 
 -------------------------------
-## 3. Retrieving Wikipedia articles (Clustering & Retrieval)
+## 3. Retrieving Wikipedia articles (Clustering & Retrieval) (Unsupervised Approach)
 -------------------------------
 * Similarity document retrieval : Most popular : "Bag of words" model.
 * Bag of Words : Order of words is ignored, count the number of instances of words and create a vector. The word count vectors are taken from the various documents. The summation of element-wise multiplication is high for similar documents.
@@ -70,9 +70,16 @@
 ###### Nearest neighbour model: Have a query article and a corpus to search articles from.
 * Need to specify deistance metrics; Output -> collection of related articles.
 ###### 1-Nearest neighbour model : Input - Query articles; Output - Similar articles; 
-    Search over the corpus  
-
-
+* Search over each article in the corpus  
+* compute s = similarity(query article, corpus article)
+* If s> Best_s, record doc_article = corpus article and ser Best_S=s; Return;
+###### K-Nearest neighbors:
+* Input - Query article; Output - List of K similar articles; (same as above);
+###### K-means:
+* Assume - Similarity : Distance to the cluster centers (smaller the distance - better)
+* Need to choose many clusters (k). Initialize the cluster centers.
+* Assign observations to the closest clusters - using Voronoi tessellation;
+*
 
 
 
