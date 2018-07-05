@@ -97,17 +97,43 @@
 * Personalization is transforming our experience in the world, connects users to items.
 * Recommendations combine glbal and session interest, and recommendations must adapt to changing times and needs.
 * Building a Recommender System:
-####### Solution 1:
+###### Solution 1 : Popularity
+* New articles - most read, most email, etc;
+* Limitation - No personalization, results are based on the entire set of users/readers.
+###### Solution 2 : Classification Model
+* The model will be used to evaluate whether a user likes or dislikes a product.
+                                                                                -------> Yes!
+                                                                               |
+* Input (User info, Purchase history, Product Info, Other info) -> Classifier -
+                                                                               |
+                                                                                -------> No
+* Pros : Personalized(considers user info and purchase history); Features can capture context(time of day, etc);
+* Limitation : Model dependent features may not be available. Not optimum model;
+###### Solution 3 : Collaborative Filtering 
+* Co-occurence Matrix - (People who bought this also bought that) - It stores users and items they bought. (#item X #item) matrix;
+* Co-occurence matrix - built by iterating/searching through all the user history of purchases that have been made and count incrementing with each new product.
 
+###### Making Recommendations using co-occurence matrix:
+* Look as the focus product row in the matrix and extract it.
+* Recommendations are made by sorting the listed vector and recommend the items with the largest count.
+* Limitation: In case of popular items, they seem to domainate the recommendations.
+* Therefore need to normalize co-occurence matrix;
 
+###### Normalize co-occurences : Similarity Matrix
+* Jaccard Similarity - normalize by popularity -> (# purchased by i and j) / (# purchased by i or j);
+* Limitation : Only current page matters, no history recorded.
 
+###### Weighted/Average of purchased items:
+* A weighted average is computed based on having purchase history. User specific score for each item is computed for each item j in the inventory by combining similarities.
+* Example : User has purchased - phone and phonecover, given this the probability of a user purchasing a charger is: Score(User, charger) = 1/2 (S charger,phone + S charger,phonecover);
+* Limitation: does not use - context, user features, product features; Cold start problem - no purchase history - new users, new products;
 
+###### Solution 4: Discovering hidden structure by matrix factorization.
+* It takes into consideration - person, their features, product features and finds a sync, also considers the interaction between users and their products.
 
-
-
-
-
-
+##### Movie Recommendation:
+* Table : Users watch movies and rate them;
+* From the movie corpus - a matrix is built - cells are divided - watched and unwatched cells based on the information from the watched cells the unwatched cells must be filled and evaluated.
 
 
 
