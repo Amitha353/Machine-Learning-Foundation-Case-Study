@@ -157,7 +157,19 @@
 * Model 2 - Build a song recommender with personalization -> input=train_data ; feature = userid; target = songid;
 * Apply the personalization model to make song recommendations.
 
+-------------------------------
+5. Deep Learning (Visual Product Recommender)
+-------------------------------
+* Neural Networks - It provides non-linear representation of data/features; 
+* In normal classification model - image classification -> Input : features / image pixel; Output : predicted object;
+* Linear classifiers - create a line or linear decision boundary between + / - classes;
+* While in Neural networks - classifiers are represented by graphs, here there is a node for each feature - x1, x2, x3, ..., xn; and one output node y(prediction);
+###### A "one layer neural network" is similar to the "linear classifier" as both can perform "OP" and "AND" operation. But a simple "linear classifier" cannot perform "XOR" operations, or they cannot segregate data when there is no line that separates the + from the -;
+#### Standard Image classification approach:
+* Using the hand created image feature - SIFT feature;
+* Input : Extract features (create a vector - based on locations where the firing occured) -> Feed it to a simple classifier (logistic regression, SVM - support vector machine); -> detect;
+* Challenges - Many hand created features exist for finding interest points - but a painful process to design.
 
-
-
+### Deep Learning - Neural Networks - implicitly learn features 
+* Neural Networks capture different types of image features at different layers and they get learnt automatically.
 
