@@ -172,4 +172,12 @@
 
 ### Deep Learning - Neural Networks - implicitly learn features 
 * Neural Networks capture different types of image features at different layers and they get learnt automatically.
+* Pros : Enables learning features rather than hand tuning; Impressive performance gains for Computer Vision, Speech recognition, some text analysis;
+* Challenges : Requires a lot of data, and labelled data; Splitting training /validation set -> training deep neural network -> time consuming;
+* Computationally expensive and extremely hard to tune - choice of architectute, parameter types, hyperparameters, learning algorithm ,etc;
 
+#### Deep Features:
+* Deep Features = Deep Learning + Transfer Learning;
+* It allows to build neural networks even in the absence of large amount of data.
+* Transfer Learning - Use data from one task to help learn in another task;
+* Since there are many layers, the last few are relevant to the specific task. Hence the last few layers can be chipped of and the rest can then be feed into other algorithm for attaining predictions.
