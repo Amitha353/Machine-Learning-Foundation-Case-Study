@@ -131,7 +131,7 @@
 ###### Solution 4: Discovering hidden structure by matrix factorization.
 * It takes into consideration - person, their features, product features and finds a sync, also considers the interaction between users and their products.
 
-##### Movie Recommendation:
+### Movie Recommendation:
 * Table : Users watch movies and rate them;
 * From the movie corpus - a matrix is built - cells are divided - watched and unwatched cells based on the information from the watched cells the unwatched cells must be filled and evaluated.
 * Describe movie v with the topic-labels(How much action, drama, romance, mystery, etc);
@@ -141,13 +141,21 @@
 * *RSS(L, R)= (Observerd (L, R) - Predicted(L, R))^2 + include all (u, v) pairs where Rating Observered(u,v) is available (black squares));
 * Limitation (Matrix Factorization - Model still can't deal with new users or movies);
 
+### Featured Matrix Factorization:
+* It combines features and discovered topics.
+* In case of a new user - uses their features like age, gender, perference, etc to predict items to the users.
 
+### Performance metrics for recommender systems:
+* Precision = # liked and shown / # shown; (How much thing i have to look into compared to what i like);
+* Recall = # likes and shown / # liked; (How much the recommended items cover the things that i'm interested in)
 
-
-
-
-
-
+#### Algorithm:
+* Load the dataset - user_id, song_id, listen_count, title, artist, songs; count the number of unique users;
+* Create a song recommender - split the data 80% / 20% - training / test;
+* Model 1 - Simple popularity recommender -> input=train_data ; feature = userid; target = songid;
+* Use the simple popularity model to make recommendations;
+* Model 2 - Build a song recommender with personalization -> input=train_data ; feature = userid; target = songid;
+* Apply the personalization model to make song recommendations.
 
 
 
