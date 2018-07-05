@@ -134,10 +134,12 @@
 ##### Movie Recommendation:
 * Table : Users watch movies and rate them;
 * From the movie corpus - a matrix is built - cells are divided - watched and unwatched cells based on the information from the watched cells the unwatched cells must be filled and evaluated.
-
-
-
-
+* Describe movie v with the topic-labels(How much action, drama, romance, mystery, etc);
+* Describe user u with the topic-label(How much the user likes action, drama, romance, mystery, etc);
+* Rating(u,v)(hat) = It is the product of two vectors - Estimate of how a user 'u' will like a movie 'v' given they have never seen it before.
+* The fit on the model is the Residual Sum of Squares (RSS);
+* *RSS(L, R)= (Observerd (L, R) - Predicted(L, R))^2 + include all (u, v) pairs where Rating Observered(u,v) is available (black squares));
+* Limitation (Matrix Factorization - Model still can't deal with new users or movies);
 
 
 
