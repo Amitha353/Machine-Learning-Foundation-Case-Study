@@ -45,7 +45,7 @@
 * Confusion Matrix - The relation between true label and predicted label; (True Positive, False Negative, False Positive, True Negative);
 
 #### Algorithm
-------------------------------------
+--------------------
 * Read the product review data. (name, review, rating)
 * Create a word count vector for each review - tokenizing/separating the words. (name, review, rating, word_count)
 * Extract the most popular product and explore it.
@@ -91,9 +91,13 @@
 * compute the distance between articles to compare the similarity. (Lower the cosine distance, better the similarity)
 * Build the nearest neighbour model - knn-model (Input -> people dataset; feature -> tfidf; label-> name;) Output -> clusters (similarity clusters);
 
-
-
-
+-------------------------------
+## 4. Recommender System (Recommending songs)
+-------------------------------
+* Personalization is transforming our experience in the world, connects users to items.
+* Recommendations combine glbal and session interest, and recommendations must adapt to changing times and needs.
+* Building a Recommender System:
+######### Solution 1:
 
 
 
