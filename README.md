@@ -77,14 +77,19 @@
 * Input - Query article; Output - List of K similar articles; (same as above);
 ###### K-means:
 * Assume - Similarity : Distance to the cluster centers (smaller the distance - better)
-* Need to choose many clusters (k). Initialize the cluster centers.
-* Assign observations to the closest clusters - using Voronoi tessellation;
-*
+* 1. Need to choose many clusters (k). Initialize the cluster centers.
+* 2. Assign observations to the closest clusters - using Voronoi tessellation;
+* 3. Revise the cluster centers as mean of assigned observations. (Initially the cluster centers are randomly initialized, therefore iterate on the observations inorder to retrieve a better cluster center that fits the data);
+* 4. Repeat 2 and 3
 
-
-
-
-
+#### Document Retrieval
+* Load the text data (wikipedia);
+* Explore the dataset - URI, name, text;
+* Get word count for the focus article, sort and create a dictionary. - URI, name, text, word_count.
+* compute tf_idf on the entire corpus. - URI, name, text, word_count, tfidf.
+* Examine tf-idf for the focus article. sort w.r.t tfidf;
+* compute the distance between articles to compare the similarity. (Lower the cosine distance, better the similarity)
+* Build the nearest neighbour model - knn-model (Input -> people dataset; feature -> tfidf; label-> name;) Output -> clusters (similarity clusters);
 
 
 
