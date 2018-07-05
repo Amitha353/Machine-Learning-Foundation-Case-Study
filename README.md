@@ -158,13 +158,13 @@
 * Apply the personalization model to make song recommendations.
 
 -------------------------------
-5. Deep Learning (Visual Product Recommender)
+## 5. Deep Learning (Visual Product Recommender)
 -------------------------------
 * Neural Networks - It provides non-linear representation of data/features; 
 * In normal classification model - image classification -> Input : features / image pixel; Output : predicted object;
 * Linear classifiers - create a line or linear decision boundary between + / - classes;
 * While in Neural networks - classifiers are represented by graphs, here there is a node for each feature - x1, x2, x3, ..., xn; and one output node y(prediction);
-###### A "one layer neural network" is similar to the "linear classifier" as both can perform "OP" and "AND" operation. But a simple "linear classifier" cannot perform "XOR" operations, or they cannot segregate data when there is no line that separates the + from the -;
+###### A "one layer neural network" is similar to the "linear classifier" as both can perform "OR" and "AND" operation. But a simple "linear classifier" cannot perform "XOR" operations, or they cannot segregate data when there is no line that separates the + from the -;
 #### Standard Image classification approach:
 * Using the hand created image feature - SIFT feature;
 * Input : Extract features (create a vector - based on locations where the firing occured) -> Feed it to a simple classifier (logistic regression, SVM - support vector machine); -> detect;
@@ -181,3 +181,13 @@
 * It allows to build neural networks even in the absence of large amount of data.
 * Transfer Learning - Use data from one task to help learn in another task;
 * Since there are many layers, the last few are relevant to the specific task. Hence the last few layers can be chipped of and the rest can then be feed into other algorithm for attaining predictions.
+
+#### Algorithm:
+* Load the image analysis dataset.
+* Explore the data - (id, image, label, deep_features, image_array)
+* Model 1: Train classifier on raw pixels (features are raw pixels and not deep features); - input : image train data; feature - image_array, target - label; algorith - logistic_classifer;
+* Make predictions with the simple model.
+* Evaluate the model on the test-data -> accuracy, precision, recall;
+* Model 2: Deep Features (Tranfer Learning) - input : image_train, features : deep_features, target : label, algorithm : logistic regression.
+* Make predictions with the deep feature model.
+* Compute the test data accuracy of the deep_feature model.
