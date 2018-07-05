@@ -97,7 +97,7 @@
 * Personalization is transforming our experience in the world, connects users to items.
 * Recommendations combine glbal and session interest, and recommendations must adapt to changing times and needs.
 * Building a Recommender System:
-######### Solution 1:
+##### Solution 1:
 
 
 
